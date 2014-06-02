@@ -32,7 +32,10 @@ public class GoogleServiceLogin {
 		selenium.waitForPageToLoad(TIMEOUT);
 	}
 
-	public boolean isLoginErrorMessage() {
-		return selenium.isElementPresent("errormsg_0_Passwd");
+	public boolean isLoginErrorMessage(String message) {
+		//return selenium.isElementPresent("errormsg_0_Passwd");
+		selenium.isElementPresent("errormsg_0_Passwd");
+		System.out.println(selenium.getText("errormsg_0_Passwd"));
+		return selenium.getText("errormsg_0_Passwd").contains(message);
 	}
 }
